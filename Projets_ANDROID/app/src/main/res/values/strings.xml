@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NoteApp</string>
+    <string name="ic_plus">Icône Plus</string>
+    <string name="ic_delete">icône supprimer</string>
+    <string name="Note_Title">Ttile de la note</string>
+    <string name="Note_Description">desc de la note</string>
+    <string name="Create_Note">Créer la note</string>
+    <string name="update_note">Sauvegarder</string>
+    <string name="note_updated">La note à été enregistrée</string>
+</resources>
