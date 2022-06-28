@@ -6,14 +6,33 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+	<div class="popup">
+		<div class="form-popup" id="popup-Form">
+			<h2>Commencer ?</h2>
+			<button type="button" class="btn cancel" onclick="closeForm()">Lessgo !</button>
+		</div>
+		<div class="popup-decompte" id="decompte-popup"></div>
+	</div>
+	
+	<div id="header">
+		<div id="score">
+			<h2>Ton score :</h2>
+			<div id="score">0</div>
+		</div>
 
-	<h2>Ton score :</h2>
-	<div id="score">0</div>
+		<div id="time">
+			<h2>Temps restant :</h2>
+			<div id="time-left">60</div>
+		</div>
 
-	<h2>Temps restant :</h2>
-	<div id="time-left">60</div>
-
-	<div class="grid">
+		<div id="play">
+			<img src="" alt="restart">
+			<img src="" alt="pause">
+			<img src="" alt="play">
+		</div>
+	</div>
+	
+	<div class="grid" id="grid">
 		<div class="square" id="1"></div>
 		<div class="square" id="2"></div>
 		<div class="square" id="3"></div>

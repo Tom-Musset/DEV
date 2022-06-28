@@ -1,8 +1,9 @@
 .grid{
 	width: 606px;
 	height: 606px;
-	display: flex;
+	display: none;
 	flex-wrap: wrap;
+	margin: auto;
 }
 
 .square{
@@ -10,7 +11,73 @@
 	width: 200px;
 	border: solid black 1px;
 }
-
+#header{
+	display: flex;
+}
+#play{
+	position: relative;
+	width: 33%;
+}
+#score{
+	position: relative;
+	width: 33%;
+}
+#time{
+	position: relative;
+	width: 33%;
+}
 .mole{
 	background-color: blue;
 }
+
+* {
+	box-sizing: border-box;
+  }
+  body {
+	font-family: Roboto, Helvetica, sans-serif;
+  }
+
+  /* Positionnez la forme Popup */
+  .popup {
+	position: relative;
+	text-align: center;
+	width: 100%;
+  }
+  /* Masquez la forme Popup */
+  .form-popup {
+	display: none;
+	position: fixed;
+	left: 45%;
+	top: 5%;
+	transform: translate(-45%, 5%);
+	border: 2px solid #666;
+	z-index: 9;
+	max-width: 300px;
+	padding: 20px;
+	background-color: #fff;
+  }
+
+  .popup-decompte {
+	display: none;
+	position: fixed;
+	left: 45%;
+	top: 5%;
+	transform: translate(-45%, 5%);
+	border: 2px solid #666;
+	z-index: 9;
+	max-width: 300px;
+	padding: 20px;
+	background-color: #fff;
+  }
+
+  /* Stylez le bouton de connexion*/
+  .form-popup .btn {
+	background-color: #8ebf42;
+	color: #fff;
+	padding: 12px 20px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	margin-bottom: 10px;
+	opacity: 0.8;
+  }
