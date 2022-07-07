@@ -10,6 +10,8 @@ let hitPosition
 let currentTime = 20
 let countDownTimerId
 let total = 0
+let ChoixGrille
+let choixTemps 
 
 function randomSquare(){
 	squares.forEach(square => {
@@ -61,5 +63,13 @@ function closeForm() {
 	moveMole()
 }
 
+function idChoixGrille(idGrille){
+	ChoixGrille = idGrille
+	console.log(ChoixGrille)
+}
 
+function idChoixTemps(idTemps){
+	choixTemps = idTemps
+	console.log(choixTemps)
+}
 	openForm()

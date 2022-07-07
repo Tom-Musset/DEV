@@ -9,6 +9,14 @@
 	<div class="popup">
 		<div class="form-popup" id="popup-Form">
 			<h2>Commencer ?</h2>
+			<p>temps :</p>
+			<input type="checkbox" id="20s" onclick="idChoixTemps(this.id)">20s</input>
+			<input type="checkbox" id="45s" onclick="idChoixTemps(this.id)">45s</input>
+
+			<p>grille :</p>
+			<input type="checkbox" id="3x3" onclick="idChoixGrille(this.id)">3x3</input>
+			<input type="checkbox"id="5x5" onclick="idChoixGrille(this.id)">5x5</input>
+
 			<button type="button" class="btn cancel" onclick="closeForm()">Lessgo !</button>
 		</div>
 		<div class="popup-decompte" id="decompte-popup"></div>
