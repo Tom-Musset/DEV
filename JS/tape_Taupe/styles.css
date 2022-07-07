@@ -18,7 +18,7 @@
 	position: relative;
 	width: 33%;
 }
-#score{
+.score{
 	position: relative;
 	width: 33%;
 }
@@ -80,4 +80,9 @@
 	width: 100%;
 	margin-bottom: 10px;
 	opacity: 0.8;
+  }
+
+  #play img{
+	width: 100px;
+	height: 100px;
   }
