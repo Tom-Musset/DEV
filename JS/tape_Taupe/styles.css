@@ -6,9 +6,15 @@
 	margin: auto;
 }
 
-.square{
+.square200{
 	height: 200px;
 	width: 200px;
+	border: solid black 1px;
+}
+
+.square120{
+	height: 120px;
+	width: 120px;
 	border: solid black 1px;
 }
 #header{
@@ -85,6 +91,13 @@
   #play img{
 	width: 100px;
 	height: 100px;
+  }
+
+  @media screen and (max-width: 1000px) {
+	#play img{
+		width: 60px;
+		height:60px;
+	  }
   }
 
   @media screen and (max-width: 800px) {

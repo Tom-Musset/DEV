@@ -10,12 +10,18 @@
 		<div class="form-popup" id="popup-Form">
 			<h2>Commencer ?</h2>
 			<p>temps :</p>
-			<input type="checkbox" id="20s" onclick="idChoixTemps(this.id)">20s</input>
-			<input type="checkbox" id="45s" onclick="idChoixTemps(this.id)">45s</input>
+			<input type="checkbox"class="checkbox_temps" id="20s" onclick="idChoixTemps(this.id)">20s</input>
+			<input type="checkbox"class="checkbox_temps" id="45s" onclick="idChoixTemps(this.id)">45s</input>
 
 			<p>grille :</p>
-			<input type="checkbox" id="3x3" onclick="idChoixGrille(this.id)">3x3</input>
-			<input type="checkbox"id="5x5" onclick="idChoixGrille(this.id)">5x5</input>
+			<input type="checkbox"class="checkbox_grille" id="3x3" onclick="idChoixGrille(this.id)">3x3</input>
+			<input type="checkbox"class="checkbox_grille"id="5x5" onclick="idChoixGrille(this.id)">5x5</input>
+			
+			<p>vitesse :</p>
+			<input type="checkbox"class="checkbox_vitesse" id="1x" onclick="idChoixVitesse(this.id)">1x</input>
+			<input type="checkbox"class="checkbox_vitesse"id="1.5x" onclick="idChoixVitesse(this.id)">1.5x</input>
+			<input type="checkbox"class="checkbox_vitesse"id="2x" onclick="idChoixVitesse(this.id)">2x</input>
+			<input type="checkbox"class="checkbox_vitesse"id="2.5x" onclick="idChoixVitesse(this.id)">2.5x</input>
 
 			<button type="button" class="btn cancel" onclick="closeForm()">Lessgo !</button>
 		</div>
@@ -41,15 +47,7 @@
 	</div>
 	
 	<div class="grid" id="grid">
-		<div class="square" id="1"></div>
-		<div class="square" id="2"></div>
-		<div class="square" id="3"></div>
-		<div class="square" id="4"></div>
-		<div class="square" id="5"></div>
-		<div class="square" id="6"></div>
-		<div class="square" id="7"></div>
-		<div class="square" id="8"></div>
-		<div class="square" id="9"></div>
+		<div id="square"></div>
 	</div>
 
 	<script type="text/javascript" src="app.js"></script>
