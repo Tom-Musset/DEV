@@ -13,8 +13,12 @@ let total = 0
 let ChoixGrille 
 let tailleSquare
 let vitesse
+let Time
+let randomSquareInterval
+let playing = true
 
 function createGrille(choix, taille){
+	currentTime = Time
 	for(let i =0;i<(choix*choix);i++){
 		var e = document.createElement("div")
 		e.className="square"+taille
@@ -24,7 +28,7 @@ function createGrille(choix, taille){
 	squares = document.querySelectorAll("#square")
 	squares.forEach(square => {
 		square.addEventListener('mousedown', () => {
-			if(square.id == hitPosition){
+			if(square.className == hitPosition){
 				result++
 				score.textContent = result
 				hitPosition = null
@@ -36,33 +40,38 @@ function createGrille(choix, taille){
 }
 
 function randomSquare(){
-	squares.forEach(square => {
-		square.classList.remove('mole')
-	})
-
-	let randomSquare = squares[Math.floor(Math.random() * (ChoixGrille*ChoixGrille))]
-	randomSquare.classList.add('mole')
-
-	hitPosition = randomSquare.id
-	total++
+	if(playing==true){
+		squares.forEach(square => {
+			square.classList.remove('mole')
+		})
+	
+		let randomSquare = squares[Math.floor(Math.random() * (ChoixGrille*ChoixGrille))]
+		randomSquare.classList.add('mole')
+	
+		hitPosition = randomSquare.className
+		total++
+	}
 }
 
 
 
 function moveMole(){
-	countDownTimerId = setInterval(countDown, 1000)	
-	setInterval(randomSquare, 500/vitesse)
+		countDownTimerId = setInterval(countDown, 1000)	
+		randomSquareInterval = setInterval(randomSquare, 500/vitesse)
+	
 }
 
 function countDown(){
-	currentTime--
-	timeLeft.textContent = currentTime
-
-	if(currentTime == 0){
-		clearInterval(countDownTimerId)
-		popupDisplay.innerHTML = "<h2>ton score final est de " + Math.round((result/total)*100) +" %</h2>"
-		openForm()
-		gridDisplay.style.display = 'none'
+	if(playing==true){
+		currentTime--
+		timeLeft.textContent = currentTime
+	
+		if(currentTime == 0){
+			clearInterval(countDownTimerId)
+			popupDisplay.innerHTML = "<h2>ton score final est de " + Math.round((result/total)*100) +" %</h2>"
+			openForm()
+			gridDisplay.style.display = 'none'
+		}
 	}
 }
 
@@ -90,10 +99,10 @@ function idChoixGrille(idGrille){
 
 function idChoixTemps(idTemps){
 	if(idTemps == "20s"){
-		currentTime = 20
+		Time = 20
 	}
 	if(idTemps == "45s"){
-		currentTime = 45
+		Time = 45
 	}
 }
 
@@ -110,5 +119,28 @@ function idChoixVitesse(idVitesse){
 	if(idVitesse == "2.5x"){
 		vitesse = 2.5
 	}
+}
+
+function effaceGrille(){
+	document.querySelectorAll("#square").forEach(e => e.remove())
+	var e = document.createElement("div")
+	e.setAttribute("id","square")
+	gridDisplay.appendChild(e)
+}
+function restart(){
+	clearInterval(randomSquareInterval)
+	clearInterval(countDownTimerId)
+	result = 0
+	score.textContent = result
+	effaceGrille()
+	setTimeout(	function(){
+				createGrille(ChoixGrille,tailleSquare)
+				},1000)
+}
+function pause(){
+	playing=false
+}
+function play(){
+	playing=true
 }
 	openForm()
