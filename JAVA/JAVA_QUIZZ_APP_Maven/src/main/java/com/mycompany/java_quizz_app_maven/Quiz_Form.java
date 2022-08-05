@@ -1,4 +1,4 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
@@ -197,11 +197,12 @@ public class Quiz_Form extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_Next_QActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Next_QActionPerformed
-       
+        
         if(jButton_Next_Q.getText().equals("restart the quiz")){
-            //restart the quiz
-            index = 0 ;
-            correct = 0;
+            jButton_Next_Q.setText("Next");
+            jPanel_Q_Container.setBackground(new java.awt.Color(204, 204, 204));
+            index = 0;
+            correct = 0;                    
         }
         
         if(index == questions.length){
