@@ -47,17 +47,9 @@ public class Quiz_Form extends javax.swing.JFrame {
             correct++;
         }
         index++;
-        enableRbuttons(false);
+        
     }
-    
-    // enable/disable radiobuttons
-    public void enableRbuttons(boolean yes_or_no){
-        jRadioButton1_.setEnabled(yes_or_no);
-        jRadioButton2_.setEnabled(yes_or_no);
-        jRadioButton3_.setEnabled(yes_or_no);
-        jRadioButton4_.setEnabled(yes_or_no);
-    }
-    
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -218,8 +210,6 @@ public class Quiz_Form extends javax.swing.JFrame {
             jButton_Next_Q.setText("restart the quiz");
         }
         else{
-             //enable radio buttons
-                enableRbuttons(true);
 
                 // display the next question
                 Lbl_Question.setText(questions[index]);
