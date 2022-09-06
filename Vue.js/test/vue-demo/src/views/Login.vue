@@ -3,15 +3,15 @@
         <!-- Pills navs -->
       <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
         <li class="nav-item" role="presentation">
-          <a v-if="mode == 'register'" class="nav-link " id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
+          <a v-if="mode == 'register'" class="nav-link " id="tab-login" data-mdb-toggle="pill" role="tab"
             aria-controls="pills-login" @click="switchToLogin()" >Login</a>
-          <a v-if="mode == 'login'" class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
+          <a v-if="mode == 'login'" class="nav-link active" id="tab-login" data-mdb-toggle="pill" role="tab"
             aria-controls="pills-login" @click="switchToLogin()" >Login</a>
         </li>
         <li class="nav-item" role="presentation">
-          <a v-if="mode == 'register'" class="nav-link active" id="tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab"
+          <a v-if="mode == 'register'" class="nav-link active" id="tab-register" data-mdb-toggle="pill" role="tab"
             aria-controls="pills-register" @click="switchToRegister()" >Register</a>
-          <a v-if="mode == 'login'" class="nav-link" id="tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab"
+          <a v-if="mode == 'login'" class="nav-link" id="tab-register" data-mdb-toggle="pill" role="tab"
             aria-controls="pills-register" @click="switchToRegister()" >Register</a>
         </li>
       </ul>
@@ -68,7 +68,7 @@
             
             <!-- Name input -->
             <div class="form-outline mb-4">
-              <input v-model="name" type="text" id="registerName" class="form-control" required />
+              <input v-model="nom" type="text" id="registerName" class="form-control" required />
               <label class="form-label" for="registerName">Name</label>
             </div>
   
@@ -90,12 +90,6 @@
               <label class="form-label" for="registerPassword">Password</label>
             </div>
   
-            <!-- Repeat Password input -->
-            <div class="form-outline mb-4">
-              <input v-model="password2" type="password" id="registerRepeatPassword" class="form-control" required />
-              <label class="form-label" for="registerRepeatPassword">Repeat password</label>
-            </div>
-  
             <!-- Checkbox -->
             <div class="form-check d-flex justify-content-center mb-4" style="display:inline!important;">
               <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck"
@@ -106,7 +100,7 @@
             </div>
   
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-3" >Register</button>
+            <button @click="createAccount()" class="btn btn-primary btn-block mb-3" >Register</button>
           </form>
         </div>
       </div>
@@ -121,7 +115,11 @@
     data: function(){
       return{
         mode:'login',
-          }
+        nom: '',
+        username: '',
+        email: '',
+        password: ''
+      }
     },
     methods: {
       switchToRegister: function () {
@@ -129,7 +127,15 @@
       },
       switchToLogin: function () {
         this.mode = 'login';
-      }
+      },
+      createAccount: function(){
+        this.$store.dispatch('createAccount',{
+          email: this.email,
+          nom: this.nom,
+          prenom: this.username,
+          password: this.password,
+        })
+      },
     }
   }
   </script>
